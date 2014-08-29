@@ -16,16 +16,21 @@
     __weak NSTextField *textField;
     __weak NSTextField *acceptedMessageCount;
     NSMutableArray *acceptedMessageArray;
+    __strong QCView * qcView;
+    QCCompositionParameterView *qcParamsView;
 }
 
 - (IBAction)setText:(id)sender;
 @property (weak) IBOutlet NSTextField *textField;
-@property (weak) IBOutlet QCView *qcView;
+@property (weak) IBOutlet NSTextField *acceptedMessageCount;
+@property (strong) IBOutlet QCView *qcView;
+@property (strong) IBOutlet QCCompositionParameterView *qcParamsView;
 - (IBAction)updateDisplay:(id)sender;
 - (IBAction)clearAcceptedMessages:(id)sender;
-
-@property (weak) IBOutlet NSTextField *acceptedMessageCount;
+@property (unsafe_unretained) IBOutlet NSWindow *displayWindow;
+@property (unsafe_unretained) IBOutlet NSWindow *displaySettings;
 
 /*-(IBAction)startDisplay:(id)sender;*/
 
+@property (strong) IBOutlet QCCompositionParameterView *paramsView;
 @end
