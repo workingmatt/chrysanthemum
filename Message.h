@@ -12,6 +12,7 @@
 {
     NSString *content;
     NSString *contentURL;
+    NSImage *contentImage;
     NSImage *authorImage;
     NSString *authorName;
     NSString *atName;
@@ -20,6 +21,7 @@
 
 @property NSString * content;
 @property NSString * contentURL;
+@property NSImage * contentImage;
 @property NSImage * authorImage;
 @property NSString * authorName;
 @property NSString * atName;

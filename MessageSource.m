@@ -21,7 +21,9 @@
 - (id)init
 {
     if(self = [super init]){
-        sourceURL = @"http://search.twitter.com/search.rss?q=";
+        //sourceURL = @"https://search.twitter.com/search.rss?q=";
+        //%3F = ?, %3D = equal sign,
+        sourceURL = @"https://api.twitter.com/1.1/search/tweets.json%3Fq=";
     
     }
     return self;
@@ -55,8 +57,8 @@
 - (id)fetchRawMessages:(id)sender;
 {
     //set up accesstoken for WorkingMatt and BigScreenHornch
-    OAToken *accessToken = [[OAToken alloc] initWithKey:@"373301436-HNMkW9y142saLMrlhqznJTObIqliaTMJPhDOFQKK" secret:@"ftcgOuRzzC6EiDUbuOnPG4Uph1QfbOpGbZ1A2q5IKEWj9"];
-    OAConsumer *consumer = [[OAConsumer alloc] initWithKey:@"PtrC2MoloiQey9wZYtrPw" secret:@"ir6S4fc1UMsbnFBb3cPBuxhpOfHR1E5mvNlMfg"];
+    OAToken *accessToken = [[OAToken alloc] initWithKey:@"373301436-XJUQHykP3Uy5zzayHTYPFOrLUZ7UqtzoGdKe3dA7" secret:@"dzBgj9CXaRtZb90uW4GjKDPBlLfnQcAqJxwkYNttPiXMj"];
+    OAConsumer *consumer = [[OAConsumer alloc] initWithKey:@"wNDfJuxIlRpVJrHbm6R2jLvay" secret:@"hqX8P4R60NCyHPP5C75wB3ovwRhSnftNgTcPal1rEcUrFAurR0"];
     
     OADataFetcher *fetcher = [[OADataFetcher alloc] init];
     
@@ -102,12 +104,15 @@
     
     //Parse the XML response
     doc = [[NSXMLDocument alloc] initWithData:urlData options:0 error:&error];
+    NSAlert *alert = [NSAlert alertWithMessageText:@"Fetching tweets, this may take a few seconds" defaultButton:@"OK" alternateButton:@"Cancel" otherButton:@"" informativeTextWithFormat:@""];
+    [alert runModal];
     //NSLog(@"doc = %@", doc);
-    if (!doc){
-        NSAlert *alert = [NSAlert alertWithError:error];
-        [alert runModal];
-        return self;
-    }
+//    if (!doc){
+//        NSLog(@"Error2");
+//        NSAlert *alert = [NSAlert alertWithError:error];
+//        [alert runModal];
+//        return self;
+//    }
     
 
     return self;

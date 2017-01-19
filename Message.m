@@ -12,6 +12,7 @@
 
 @synthesize content;
 @synthesize contentURL;
+@synthesize contentImage;
 @synthesize authorImage;
 @synthesize authorName;
 @synthesize atName;

@@ -26,7 +26,7 @@
 
 - (void) awakeFromNib
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Luna Vertical2014" ofType:@"qtz"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Womens March" ofType:@"qtz"];
     NSView *superView = [self.displayWindow contentView];
     qcView = [[QCView alloc] initWithFrame:superView.frame];
     [superView addSubview:qcView];
@@ -151,7 +151,6 @@
 
 }
 
-//TODO Implement a button to empty the accepted message array
 
 - (IBAction)clearAcceptedMessages:(id)sender {
     Singleton* mySingleton = [Singleton sharedSingleton];
@@ -160,6 +159,11 @@
     [mySingleton.passedMutableArray removeAllObjects];
     acceptedMessageCount.stringValue = [NSString stringWithFormat:@"%ld", acceptedMessageArray.count];
     NSLog(@"accepted message count: %@", acceptedMessageCount.stringValue);
+    
+    //clearAcceptedMessages half works.
+    //It removes all but the last msg added
+    //it doesn't remove the display slots from the animation
+    //so that one slot appears x times where x is the last number of accepted tweets.
 }
 
 

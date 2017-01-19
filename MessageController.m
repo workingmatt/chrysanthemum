@@ -43,7 +43,6 @@
 
 - (IBAction)startModeration:(id)sender
 {
-    NSError *error;
     if(!acceptedMessageArray) acceptedMessageArray = [[NSMutableArray alloc] init];
     
     //Create an instance of MessageSource class to retrieve messages from source
@@ -83,21 +82,26 @@
         tempMessage.authorName = [[status objectForKey:@"user"] objectForKey:@"name"];
         tempMessage.pubDate = [status objectForKey:@"created_at"];
         tempMessage.pubDate = [[tempMessage.pubDate componentsSeparatedByString:@" +"] objectAtIndex:0];
-
-        NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeLink error:&error];
-
         
-        //Replace the following by using the URL returned in statuses->entities->urls
-        NSArray *contentURLMatches = [detector matchesInString:tempMessage.content
-                                                       options:0
-                                                         range:NSMakeRange(0, [tempMessage.content length])];
-        if ([contentURLMatches count] == 0) {
-            tempMessage.contentURL = @"No link";
+        //If there is an attached image, add its URL to tempMessage.contentURL and download image to tempMessage.contentImage
+        //NSObject *mediaObject =[[status objectForKey:@"entities"] objectForKey:@"media"][0];
+        if ([[status objectForKey:@"entities"] objectForKey:@"media"]) {
+            tempMessage.contentURL =[[[status objectForKey:@"entities"] objectForKey:@"media"][0] objectForKey:@"media_url"];
+            tempMessage.contentImage = [[NSImage alloc]initWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:tempMessage.contentURL]]];
+            
+            //TODO - remove url from message text
+            //It is possible to find where the image link is in the content text using entities->media[0]->indices
+            //Example field is "indices":[15,35]
+            //Check https://dev.twitter.com/overview/api/entities#obj-media for info
         } else {
-            tempMessage.contentURL = [[[contentURLMatches objectAtIndex:0] URL] absoluteString];
+            NSString *pathDefaultImage = [[NSBundle mainBundle] pathForResource:@"wmolLogo" ofType:@"jpg"];
+            NSImage *defaultImage = [[NSImage alloc] initWithContentsOfFile:pathDefaultImage];
+            tempMessage.contentURL = @"Default Logo";
+            tempMessage.contentImage = defaultImage;
+            
+            NSLog(@"Adding wmolLondon logo: %@", pathDefaultImage);
         }
         [messageArray addObject:tempMessage];
-        
     }
     //end create messageArray from xml
 
@@ -122,6 +126,7 @@
     authorImageView.image = topMessage.authorImage;
     [messageContentPane setStringValue:topMessage.content];
     [authorNamePane setStringValue:topMessage.authorName];
+    contentImageView.image = topMessage.contentImage;
 //    [messageContentURLPane setMainFrameURL:topMessage.contentURL];
     return self;
 }

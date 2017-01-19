@@ -22,10 +22,7 @@
     IBOutlet NSImageView *authorImageView;
     IBOutlet NSTextField *messageContentPane;
     IBOutlet NSTextField *authorNamePane;
-
-//    __weak NSTextField *acceptedMessageCount;
-//    IBOutlet WebView *messageContentURLPane;
-//    IBOutlet NSImageView *contentImagePane;
+    IBOutlet NSImageView *contentImageView;
 
     IBOutlet NSWindow *moderatorWindow;
     NSMutableArray * messageArray;
