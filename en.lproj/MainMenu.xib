@@ -30,7 +30,7 @@
             <connections>
                 <outlet property="acceptedMessageCount" destination="747" id="1363"/>
                 <outlet property="displaySettings" destination="1324" id="1593"/>
-                <outlet property="displayWindow" destination="1471" id="1534"/>
+                <outlet property="displayWindow" destination="1471" id="yHH-Sl-74t"/>
                 <outlet property="paramsView" destination="1577" id="1592"/>
             </connections>
         </customObject>
@@ -680,7 +680,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="228" y="419" width="480" height="170"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <value key="minSize" type="size" width="480" height="170"/>
             <value key="maxSize" type="size" width="480" height="170"/>
             <view key="contentView" autoresizesSubviews="NO" id="372">
@@ -803,7 +803,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="184" y="112" width="934" height="566"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="614">
                 <rect key="frame" x="0.0" y="0.0" width="934" height="566"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -1109,7 +1109,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="317" y="87" width="505" height="592"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="1325">
                 <rect key="frame" x="0.0" y="0.0" width="505" height="592"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -1135,7 +1135,7 @@
             <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="397" y="238" width="800" height="450"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="800"/>
             <view key="contentView" id="1472">
                 <rect key="frame" x="0.0" y="0.0" width="800" height="450"/>
                 <autoresizingMask key="autoresizingMask"/>

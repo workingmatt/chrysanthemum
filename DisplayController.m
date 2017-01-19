@@ -118,6 +118,7 @@
     //Create local arrays to Demux messages from acceptedMessageArray
     NSMutableArray *acceptedContentArray = [[NSMutableArray alloc] init];
     NSMutableArray *acceptedContentURLArray = [[NSMutableArray alloc] init];
+    NSMutableArray *acceptedContentImageArray = [[NSMutableArray alloc] init];
     NSMutableArray *acceptedAuthorImageArray = [[NSMutableArray alloc] init];
     NSMutableArray *acceptedAuthorNameArray = [[NSMutableArray alloc] init];
     NSMutableArray *acceptedAtNameArray = [[NSMutableArray alloc] init];
@@ -129,6 +130,7 @@
 
         [acceptedContentArray insertObject:msg.content atIndex:index];
         [acceptedContentURLArray insertObject:msg.contentURL atIndex:index];
+        [acceptedContentImageArray insertObject:msg.contentImage atIndex:index];
         [acceptedAuthorImageArray insertObject:msg.authorImage atIndex:index];
         [acceptedAuthorNameArray insertObject:msg.authorName atIndex:index];
         [acceptedAtNameArray insertObject:msg.atName atIndex:index];
@@ -138,6 +140,7 @@
 
     [qcView setValue:acceptedContentArray forInputKey:@"contentArray"];
     [qcView setValue:acceptedContentURLArray forInputKey:@"contentURLArray"];
+    [qcView setValue:acceptedContentImageArray forInputKey:@"contentImageArray"];
     [qcView setValue:acceptedAuthorImageArray forInputKey:@"authorImageArray"];
     [qcView setValue:acceptedAuthorNameArray forInputKey:@"authorNameArray"];
     [qcView setValue:acceptedAtNameArray forInputKey:@"atNameArray"];

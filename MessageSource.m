@@ -84,7 +84,7 @@
     //NSLog(@"Search string = %@", searchString);
     
     //create the URL urlRequest http://search.twitter.com/search.rss?q=%@&rpp=100
-    NSString *urlString = [NSString stringWithFormat:@"%@%@&rpp=50", sourceURL, searchString];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@&rpp=10", sourceURL, searchString];
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
