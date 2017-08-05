@@ -26,7 +26,7 @@
 
 - (void) awakeFromNib
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"Womens March" ofType:@"qtz"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"Luna2017" ofType:@"qtz"];
     NSView *superView = [self.displayWindow contentView];
     qcView = [[QCView alloc] initWithFrame:superView.frame];
     [superView addSubview:qcView];
@@ -94,6 +94,7 @@
     [qcParamsView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
     [qcParamsView setCompositionRenderer:qcView];
     
+    NSLog(@"Debug got here");
     //    qcView.eventForwardingMask = NSAnyEventMask;
 }
 
