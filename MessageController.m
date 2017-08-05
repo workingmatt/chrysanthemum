@@ -94,7 +94,7 @@
             //Example field is "indices":[15,35]
             //Check https://dev.twitter.com/overview/api/entities#obj-media for info
         } else {
-            NSString *pathDefaultImage = [[NSBundle mainBundle] pathForResource:@"wmolLogo" ofType:@"jpg"];
+            NSString *pathDefaultImage = [[NSBundle mainBundle] pathForResource:@"lunaDefaultContent" ofType:@"png"];
             NSImage *defaultImage = [[NSImage alloc] initWithContentsOfFile:pathDefaultImage];
             tempMessage.contentURL = @"Default Logo";
             tempMessage.contentImage = defaultImage;
